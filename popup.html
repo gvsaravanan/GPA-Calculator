@@ -288,7 +288,7 @@
             $('#six').append(t);
         }
 
-        $.myjQuery1 = function() {
+        $.myjQuery2 = function() {
             $("#sem").remove();
             $(".calculator").append(`
                 <div id="six">
@@ -405,11 +405,11 @@
             );
         };
         
-        function display1() {
-            $.myjQuery1();
+        function display2() {
+            $.myjQuery2();
         };
 
-        $.myjQuery2 = function() {
+        $.myjQuery1 = function() {
             $("#six").remove();
             $(".calculator").append(`
                 <div id="sem">
@@ -597,8 +597,8 @@
             );
         };
 
-        function display2() {
-            $.myjQuery2();
+        function display1() {
+            $.myjQuery1();
         };
 
     </script>
@@ -612,9 +612,9 @@
     </div>
 
     <div class="buttons">
-        <input type="button" class="button" id="button1" value="Calculate Semester GPA" onClick="display2(); this.disabled=true; document.getElementById('button2').disabled=false;">
+        <input type="button" class="button" id="button1" value="Calculate Semester GPA" onClick="display1(); this.disabled=true; document.getElementById('button2').disabled=false;">
         <br>
-        <input type="button" class="button" id="button2" value="Calculate Six Weeks GPA" onClick="display1(); this.disabled=true; document.getElementById('button1').disabled=false;">
+        <input type="button" class="button" id="button2" value="Calculate Six Weeks GPA" onClick="display2(); this.disabled=true; document.getElementById('button1').disabled=false;">
     </div>
 
     <div class="middle">
