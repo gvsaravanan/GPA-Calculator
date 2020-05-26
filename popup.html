@@ -27,7 +27,7 @@
         }
 
         h2 {
-            font-size: 30px;
+            font-size: 29px;
             font-weight: bold;
             margin: 0;
             color: #00558a;
@@ -80,10 +80,16 @@
 
         input[type=number]{
             width: 43px;
+            background-color: #eeba39;
+            color: #00558a;
         }
 
         input[type=number]::-webkit-inner-spin-button {
             -webkit-appearance: none;
+        }
+
+        input[type=radio] {
+            color: #eeba39;
         }
 
         hr.line {
@@ -103,6 +109,7 @@
         .button {
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-size: 18px;
+            font-weight: bold;
             background-color: #00558a;
             border: none;
             color: #eeba39;
@@ -126,6 +133,7 @@
         .calc {
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-size: 18px;
+            font-weight: bold;
             background-color: #00558a;
             border: none;
             color: #eeba39;
@@ -159,7 +167,7 @@
 
     <script LANGUAGE="JavaScript" type="text/javascript">
         function calculate1() {
-            var gpa = 0;
+            var gpa = 0.000;
             var counter = 0;
 
             if (document.getElementById("final1")) {
@@ -209,16 +217,27 @@
                     gpa += 0;
                 } else {
                     if (document.getElementById("class_" + i + ".2").checked) {
-                        var add1 = (6 - (100 - (document.getElementById("class" + i + "_" + 0).value))/10)*2 + (6 - (100 - (document.getElementById("class" + i + "_" + 1).value))/10)*2 + (6 - (100 - (document.getElementById("class" + i + "_" + 2).value))/10)*2 + (6 - (100 - (document.getElementById("class" + i + "_" + 3).value))/10);
-                        gpa += (add1/7).toFixed(3);
+                        var add1 = (document.getElementById("class" + i + "_" + 0).value)*2 + (document.getElementById("class" + i + "_" + 1).value)*2 + (document.getElementById("class" + i + "_" + 2).value)*2 + (document.getElementById("class" + i + "_" + 3).value)*1;
+                        console.log(add1);
+                        var g = Math.round(add1/7);
+                        console.log(g);
+                        gpa += (6 - (100 - g)/10);
+                        console.log(gpa);
+                        console.log("");
                     } else {
-                        var add2 = (5 - (100 - (document.getElementById("class" + i + "_" + 0).value))/10)*2 + (5 - (100 - (document.getElementById("class" + i + "_" + 1).value))/10)*2 + (5 - (100 - (document.getElementById("class" + i + "_" + 2).value))/10)*2 + (5 - (100 - (document.getElementById("class" + i + "_" + 3).value))/10);
-                        gpa += (add2/7).toFixed(3);
+                        var add2 = (document.getElementById("class" + i + "_" + 0).value)*2 + (document.getElementById("class" + i + "_" + 1).value)*2 + (document.getElementById("class" + i + "_" + 2).value)*2 + (document.getElementById("class" + i + "_" + 3).value)*1;
+                        console.log(add2);
+                        var g = Math.round(add2/7);
+                        console.log(g);
+                        gpa += (5 - (100 - g)/10);
+                        console.log(gpa);
+                        console.log("");
                     }
                 } 
             }
-
+            console.log(gpa);
             gpa /= 8 - counter;
+            console.log(gpa);
 
             if (!gpa) {
                 gpa = 0;
@@ -236,7 +255,7 @@
         }        
         
         function calculate2() {
-            var gpa = 0;
+            var gpa = 0.000;
             var counter = 0;
 
             if (document.getElementById("final2")) {
@@ -284,16 +303,15 @@
                 } else {
                     if (document.getElementById("class_" + i + ".0").checked) {
                         var add1 = (6 - (100 - (document.getElementById("class" + i).value))/10);
-                        gpa += (add1).toFixed(3);
+                        gpa += add1
                     } else {
                         var add2 = (5 - (100 - (document.getElementById("class" + i).value))/10);
-                        gpa += (add2).toFixed(3);
+                        gpa += add2
                     }
                 } 
             }
-
             gpa /= 8 - counter;
-
+            
             if (!gpa) {
                 gpa = 0;
             }
@@ -313,149 +331,151 @@
             $("#sem").remove();
             $(".calculator").append(`
                 <div id="six">
-                    <h3>If you are in a double-blocked class, enter it below as one class.
-                        <br><hr class="line">
-                    </h3>
-                    
-                    <p><b>Grade for Class 1:</b>
-                        <input type="number" id="class1" maxlength="3" min="40" max="100" placeholder="40-100" required>
-                        <br>
-                    </p>
-
-                    <form id="group_1">
-                        <p><b>Is this class Pre-AP/AP?</b>
-                            <label>
-                            <input type="radio" id="class_1.0" name="ques" value="Yes" required>
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_1.1" name="ques" value="No" required>
-                            No</label> 
+                    <b>
+                        <h3>If you are in a double-blocked class, enter it below as one class.
                             <br><hr class="line">
+                        </h3>
+                        
+                        <p>Grade for Class 1:
+                            <input type="number" id="class1" maxlength="3" min="40" max="100" required>
+                            <br>
                         </p>
-                    </form>
 
-                    <p><b>Grade for Class 2:</b>
-                        <input type="number" id="class2" maxlength="3" min="40" max="100" required>
-                        <br>
-                    </p>
+                        <form id="group_1">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_1.0" name="ques" value="Yes" required>
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_1.1" name="ques" value="No" required>
+                                No</label> 
+                                <br><hr class="line">
+                            </p>
+                        </form>
 
-                    <form id="group_2">
-                        <p><b>Is this class Pre-AP/AP?</b>
+                        <p>Grade for Class 2:
+                            <input type="number" id="class2" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_2">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_2.0" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_2.1" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p>Grade for Class 3:
+                            <input type="number" id="class3" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_3">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_3.0" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_3.1" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p>Grade for Class 4:
+                            <input type="number" id="class4" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_4">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_4.0" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_4.1" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p>Grade for Class 5:
+                            <input type="number" id="class5" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_5">
+                        <p>Is this class Pre-AP/AP?
                             <label>
-                            <input type="radio" id="class_2.0" name="ques" value="Yes">
+                            <input type="radio" id="class_5.0" name="ques" value="Yes">
                             Yes</label>
                             <label>
-                            <input type="radio" id="class_2.1" name="ques" value="No">
+                            <input type="radio" id="class_5.1" name="ques" value="No">
                             No</label>
                             <br><hr class="line">
                         </p>
-                    </form>
+                        </form>
 
-                    <p><b>Grade for Class 3:</b>
-                        <input type="number" id="class3" maxlength="3" min="40" max="100" required>
-                        <br>
-                    </p>
-
-                    <form id="group_3">
-                        <p><b>Is this class Pre-AP/AP?</b>
-                            <label>
-                            <input type="radio" id="class_3.0" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_3.1" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
+                        <p>Grade for Class 6:
+                            <input type="number" id="class6" maxlength="3" min="40" max="100" required>
+                            <br>
                         </p>
-                    </form>
 
-                    <p><b>Grade for Class 4:</b>
-                        <input type="number" id="class4" maxlength="3" min="40" max="100" required>
-                        <br>
-                    </p>
+                        <form id="group_6">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_6.0" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_6.1" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
 
-                    <form id="group_4">
-                        <p><b>Is this class Pre-AP/AP?</b>
-                            <label>
-                            <input type="radio" id="class_4.0" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_4.1" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
+                        <p><b>Grade for Class 7:</b>
+                            <input type="number" id="class7" maxlength="3" min="40" max="100" required>
+                            <br>
                         </p>
-                    </form>
 
-                    <p><b>Grade for Class 5:</b>
-                        <input type="number" id="class5" maxlength="3" min="40" max="100" required>
-                        <br>
-                    </p>
+                        <form id="group_7">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_7.0" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_7.1" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
 
-                    <form id="group_5">
-                    <p><b>Is this class Pre-AP/AP?</b>
-                        <label>
-                        <input type="radio" id="class_5.0" name="ques" value="Yes">
-                        Yes</label>
-                        <label>
-                        <input type="radio" id="class_5.1" name="ques" value="No">
-                        No</label>
-                        <br><hr class="line">
-                    </p>
-                    </form>
-
-                    <p><b>Grade for Class 6:</b>
-                        <input type="number" id="class6" maxlength="3" min="40" max="100" required>
-                        <br>
-                    </p>
-
-                    <form id="group_6">
-                        <p><b>Is this class Pre-AP/AP?</b>
-                            <label>
-                            <input type="radio" id="class_6.0" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_6.1" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
+                        <p>Grade for Class 8:
+                            <input type="number" id="class8" maxlength="3" min="40" max="100" required>
+                            <br>
                         </p>
-                    </form>
 
-                    <p><b>Grade for Class 7:</b>
-                        <input type="number" id="class7" maxlength="3" min="40" max="100" required>
+                        <form id="group_8">
+                            <p><b>Is this class Pre-AP/AP?</b>
+                                <label>
+                                <input type="radio" id="class_8.0" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_8.1" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <input type="button" class="calc" id="button3" value="Calculate GPA" onClick="calculate2();">
                         <br>
-                    </p>
-
-                    <form id="group_7">
-                        <p><b>Is this class Pre-AP/AP?</b>
-                            <label>
-                            <input type="radio" id="class_7.0" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_7.1" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
-                        </p>
-                    </form>
-
-                    <p><b>Grade for Class 8:</b>
-                        <input type="number" id="class8" maxlength="3" min="40" max="100" required>
                         <br>
-                    </p>
-
-                    <form id="group_8">
-                        <p><b>Is this class Pre-AP/AP?</b>
-                            <label>
-                            <input type="radio" id="class_8.0" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_8.1" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
-                        </p>
-                    </form>
-
-                    <input type="button" class="calc" id="button3" value="Calculate GPA" onClick="calculate2();">
-                    <br>
-                    <br>
+                    </b>
                 </div>
                 `
             );
@@ -469,189 +489,191 @@
             $("#six").remove();
             $(".calculator").append(`
                 <div id="sem">
-                    <h3>If you are in a double-blocked class, enter it below as one class.
-                        <br><hr class="line">
-                    </h3>
-                    
-                    <p>Six Weeks Grades in Class 1:
-                        <input type="number" id="class1_0" maxlength="3" min="40" max="100" required>
-                        <input type="number" id="class1_1" maxlength="3" min="40" max="100" required>
-                        <input type="number" id="class1_2" maxlength="3" min="40" max="100" required>
-                    </p>
-
-                    <p>Semester Exam Grade for Class 1:
-                        <input type="number" id="class1_3" maxlength="3" min="40" max="100" required>
-                    </p>
-                    
-                    <form id="group1">
-                        <p>Is this class Pre-AP/AP?
-                            <label>
-                            <input type="radio" id="class_1.2" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_1.3" name="ques" value="No">
-                            No</label>
+                    <b>
+                        <h3>If you are in a double-blocked class, enter it below as one class.
                             <br><hr class="line">
+                        </h3>
+                        
+                        <p>Six Weeks Grades in Class 1:
+                            <input type="number" id="class1_0" maxlength="3" min="40" max="100" required>
+                            <input type="number" id="class1_1" maxlength="3" min="40" max="100" required>
+                            <input type="number" id="class1_2" maxlength="3" min="40" max="100" required>
                         </p>
-                    </form>
 
-                    <p>Six Weeks Grades in Class 2:
-                        <input type="number" id="class2_0" maxlength="3" min="40" max="100" required>
-                        <input type="number" id="class2_1" maxlength="3" min="40" max="100" required>
-                        <input type="number" id="class2_2" maxlength="3" min="40" max="100" required>
-                    </p>
-
-                    <p>Semester Exam Grade for Class 2:
-                        <input type="number" id="class2_3" maxlength="3" min="40" max="100" required>
-                    </p>
-                    
-                    <form id="group2">
-                        <p>Is this class Pre-AP/AP?
-                            <label>
-                            <input type="radio" id="class_2.2" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_2.3" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
+                        <p>Semester Exam Grade for Class 1:
+                            <input type="number" id="class1_3" maxlength="3" min="40" max="100" required>
                         </p>
-                    </form>
+                        
+                        <form id="group1">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_1.2" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_1.3" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
 
-                    <p>Six Weeks Grades in Class 3:
-                        <input type="number" id="class3_0" maxlength="3" min="40" max="100">
-                        <input type="number" id="class3_1" maxlength="3" min="40" max="100">
-                        <input type="number" id="class3_2" maxlength="3" min="40" max="100">
-                    </p>
-
-                    <p>Semester Exam Grade for Class 3:
-                        <input type="number" id="class3_3" maxlength="3" min="40" max="100">
-                    </p>
-                    
-                    <form id="group3">
-                        <p>Is this class Pre-AP/AP?
-                            <label>
-                            <input type="radio" id="class_3.2" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_3.3" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
+                        <p>Six Weeks Grades in Class 2:
+                            <input type="number" id="class2_0" maxlength="3" min="40" max="100" required>
+                            <input type="number" id="class2_1" maxlength="3" min="40" max="100" required>
+                            <input type="number" id="class2_2" maxlength="3" min="40" max="100" required>
                         </p>
-                    </form>
 
-                    <p>Six Weeks Grades in Class 4:
-                        <input type="number" id="class4_0" maxlength="3" min="40" max="100">
-                        <input type="number" id="class4_1" maxlength="3" min="40" max="100">
-                        <input type="number" id="class4_2" maxlength="3" min="40" max="100">
-                    </p>
-
-                    <p>Semester Exam Grade for Class 4:
-                        <input type="number" id="class4_3" maxlength="3" min="40" max="100">
-                    </p>
-                    
-                    <form id="group4">
-                        <p>Is this class Pre-AP/AP?
-                            <label>
-                            <input type="radio" id="class_4.2" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_4.3" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
+                        <p>Semester Exam Grade for Class 2:
+                            <input type="number" id="class2_3" maxlength="3" min="40" max="100" required>
                         </p>
-                    </form>
+                        
+                        <form id="group2">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_2.2" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_2.3" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
 
-                    <p>Six Weeks Grades in Class 5:
-                        <input type="number" id="class5_0" maxlength="3" min="40" max="100">
-                        <input type="number" id="class5_1" maxlength="3" min="40" max="100">
-                        <input type="number" id="class5_2" maxlength="3" min="40" max="100">
-                    </p>
-
-                    <p>Semester Exam Grade for Class 5:
-                        <input type="number" id="class5_3" maxlength="3" min="40" max="100">
-                    </p>
-                    
-                    <form id="group5">
-                        <p>Is this class Pre-AP/AP?
-                            <label>
-                            <input type="radio" id="class_5.2" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_5.3" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
+                        <p>Six Weeks Grades in Class 3:
+                            <input type="number" id="class3_0" maxlength="3" min="40" max="100">
+                            <input type="number" id="class3_1" maxlength="3" min="40" max="100">
+                            <input type="number" id="class3_2" maxlength="3" min="40" max="100">
                         </p>
-                    </form>
 
-                    <p>Six Weeks Grades in Class 6:
-                        <input type="number" id="class6_0" maxlength="3" min="40" max="100">
-                        <input type="number" id="class6_1" maxlength="3" min="40" max="100">
-                        <input type="number" id="class6_2" maxlength="3" min="40" max="100">
-                    </p>
-
-                    <p>Semester Exam Grade for Class 6:
-                        <input type="number" id="class6_3" maxlength="3" min="40" max="100">
-                    </p>
-                    
-                    <form id="group6">
-                        <p>Is this class Pre-AP/AP?
-                            <label>
-                            <input type="radio" id="class_6.2" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_6.3" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
+                        <p>Semester Exam Grade for Class 3:
+                            <input type="number" id="class3_3" maxlength="3" min="40" max="100">
                         </p>
-                    </form>
+                        
+                        <form id="group3">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_3.2" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_3.3" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
 
-                    <p>Six Weeks Grades in Class 7:
-                        <input type="number" id="class7_0" maxlength="3" min="40" max="100">
-                        <input type="number" id="class7_1" maxlength="3" min="40" max="100">
-                        <input type="number" id="class7_2" maxlength="3" min="40" max="100">
-                    </p>
-
-                    <p>Semester Exam Grade for Class 7:
-                        <input type="number" id="class7_3" maxlength="3" min="40" max="100">
-                    </p>
-                    
-                    <form id="group7">
-                        <p>Is this class Pre-AP/AP?
-                            <label>
-                            <input type="radio" id="class_7.2" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_7.3" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
+                        <p>Six Weeks Grades in Class 4:
+                            <input type="number" id="class4_0" maxlength="3" min="40" max="100">
+                            <input type="number" id="class4_1" maxlength="3" min="40" max="100">
+                            <input type="number" id="class4_2" maxlength="3" min="40" max="100">
                         </p>
-                    </form>
 
-                    <p>Six Weeks Grades in Class 8:
-                        <input type="number" id="class8_0" maxlength="3" min="40" max="100">
-                        <input type="number" id="class8_1" maxlength="3" min="40" max="100">
-                        <input type="number" id="class8_2" maxlength="3" min="40" max="100">
-                    </p>
-
-                    <p>Semester Exam Grade for Class 8:
-                        <input type="number" id="class8_3" maxlength="3" min="40" max="100">
-                    </p>
-                    
-                    <form id="group8">
-                        <p>Is this class Pre-AP/AP?
-                            <label>
-                            <input type="radio" id="class_8.2" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_8.3" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
+                        <p>Semester Exam Grade for Class 4:
+                            <input type="number" id="class4_3" maxlength="3" min="40" max="100">
                         </p>
-                    </form>
+                        
+                        <form id="group4">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_4.2" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_4.3" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
 
-                    <input type="button" class="calc" id="button4" value="Calculate GPA" onClick="calculate1();">
-                    <br>
-                    <br>
+                        <p>Six Weeks Grades in Class 5:
+                            <input type="number" id="class5_0" maxlength="3" min="40" max="100">
+                            <input type="number" id="class5_1" maxlength="3" min="40" max="100">
+                            <input type="number" id="class5_2" maxlength="3" min="40" max="100">
+                        </p>
+
+                        <p>Semester Exam Grade for Class 5:
+                            <input type="number" id="class5_3" maxlength="3" min="40" max="100">
+                        </p>
+                        
+                        <form id="group5">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_5.2" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_5.3" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p>Six Weeks Grades in Class 6:
+                            <input type="number" id="class6_0" maxlength="3" min="40" max="100">
+                            <input type="number" id="class6_1" maxlength="3" min="40" max="100">
+                            <input type="number" id="class6_2" maxlength="3" min="40" max="100">
+                        </p>
+
+                        <p>Semester Exam Grade for Class 6:
+                            <input type="number" id="class6_3" maxlength="3" min="40" max="100">
+                        </p>
+                        
+                        <form id="group6">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_6.2" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_6.3" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p>Six Weeks Grades in Class 7:
+                            <input type="number" id="class7_0" maxlength="3" min="40" max="100">
+                            <input type="number" id="class7_1" maxlength="3" min="40" max="100">
+                            <input type="number" id="class7_2" maxlength="3" min="40" max="100">
+                        </p>
+
+                        <p>Semester Exam Grade for Class 7:
+                            <input type="number" id="class7_3" maxlength="3" min="40" max="100">
+                        </p>
+                        
+                        <form id="group7">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_7.2" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_7.3" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p>Six Weeks Grades in Class 8:
+                            <input type="number" id="class8_0" maxlength="3" min="40" max="100">
+                            <input type="number" id="class8_1" maxlength="3" min="40" max="100">
+                            <input type="number" id="class8_2" maxlength="3" min="40" max="100">
+                        </p>
+
+                        <p>Semester Exam Grade for Class 8:
+                            <input type="number" id="class8_3" maxlength="3" min="40" max="100">
+                        </p>
+                        
+                        <form id="group8">
+                            <p>Is this class Pre-AP/AP?
+                                <label>
+                                <input type="radio" id="class_8.2" name="ques" value="Yes">
+                                Yes</label>
+                                <label>
+                                <input type="radio" id="class_8.3" name="ques" value="No">
+                                No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <b><input type="button" class="calc" id="button4" value="Calculate GPA" onClick="calculate1();"></b>
+                        <br>
+                        <br>
+                    </b>
                 </div>
                 `
             );
@@ -672,9 +694,9 @@
     </div>
 
     <div class="buttons">
-        <input type="button" class="button" id="button1" value="Calculate Semester GPA" onClick="display1(); this.disabled=true; document.getElementById('button2').disabled=false;">
+        <b><input type="button" class="button" id="button1" value="Calculate Semester GPA" onClick="display1(); this.disabled=true; document.getElementById('button2').disabled=false;"></b>
         <br>
-        <input type="button" class="button" id="button2" value="Calculate Six Weeks GPA" onClick="display2(); this.disabled=true; document.getElementById('button1').disabled=false;">
+        <b><input type="button" class="button" id="button2" value="Calculate Six Weeks GPA" onClick="display2(); this.disabled=true; document.getElementById('button1').disabled=false;"></b>
     </div>
 
     <div class="middle">
