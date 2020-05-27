@@ -80,16 +80,38 @@
 
         input[type=number]{
             width: 43px;
-            background-color: #eeba39;
-            color: #00558a;
         }
 
         input[type=number]::-webkit-inner-spin-button {
             -webkit-appearance: none;
         }
 
-        input[type=radio] {
-            color: #eeba39;
+        input[type='radio']:after {
+            width: 12px;
+            height: 12px;
+            border-radius: 12px;
+            top: -1px;
+            left: -1px;
+            position: relative;
+            background-color: #ffffff;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 0.5px solid black;
+        }
+
+        input[type='radio']:checked:after {
+            width: 12px;
+            height: 12px;
+            border-radius: 12px;
+            top: -1px;
+            left: -1px;
+            position: relative;
+            background-color: #84d0ff;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 0.5px solid black;
         }
 
         hr.line {
@@ -326,165 +348,7 @@
                 $('#six').append(final2); 
             }
         }
-
-        $.myjQuery2 = function() {
-            $("#sem").remove();
-            $(".calculator").append(`
-                <div id="six">
-                    <b>
-                        <h3>If you are in a double-blocked class, enter it below as one class.
-                            <br><hr class="line">
-                        </h3>
-                        
-                        <p>Grade for Class 1:
-                            <input type="number" id="class1" maxlength="3" min="40" max="100" required>
-                            <br>
-                        </p>
-
-                        <form id="group_1">
-                            <p>Is this class Pre-AP/AP?
-                                <label>
-                                <input type="radio" id="class_1.0" name="ques" value="Yes" required>
-                                Yes</label>
-                                <label>
-                                <input type="radio" id="class_1.1" name="ques" value="No" required>
-                                No</label> 
-                                <br><hr class="line">
-                            </p>
-                        </form>
-
-                        <p>Grade for Class 2:
-                            <input type="number" id="class2" maxlength="3" min="40" max="100" required>
-                            <br>
-                        </p>
-
-                        <form id="group_2">
-                            <p>Is this class Pre-AP/AP?
-                                <label>
-                                <input type="radio" id="class_2.0" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
-                                <input type="radio" id="class_2.1" name="ques" value="No">
-                                No</label>
-                                <br><hr class="line">
-                            </p>
-                        </form>
-
-                        <p>Grade for Class 3:
-                            <input type="number" id="class3" maxlength="3" min="40" max="100" required>
-                            <br>
-                        </p>
-
-                        <form id="group_3">
-                            <p>Is this class Pre-AP/AP?
-                                <label>
-                                <input type="radio" id="class_3.0" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
-                                <input type="radio" id="class_3.1" name="ques" value="No">
-                                No</label>
-                                <br><hr class="line">
-                            </p>
-                        </form>
-
-                        <p>Grade for Class 4:
-                            <input type="number" id="class4" maxlength="3" min="40" max="100" required>
-                            <br>
-                        </p>
-
-                        <form id="group_4">
-                            <p>Is this class Pre-AP/AP?
-                                <label>
-                                <input type="radio" id="class_4.0" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
-                                <input type="radio" id="class_4.1" name="ques" value="No">
-                                No</label>
-                                <br><hr class="line">
-                            </p>
-                        </form>
-
-                        <p>Grade for Class 5:
-                            <input type="number" id="class5" maxlength="3" min="40" max="100" required>
-                            <br>
-                        </p>
-
-                        <form id="group_5">
-                        <p>Is this class Pre-AP/AP?
-                            <label>
-                            <input type="radio" id="class_5.0" name="ques" value="Yes">
-                            Yes</label>
-                            <label>
-                            <input type="radio" id="class_5.1" name="ques" value="No">
-                            No</label>
-                            <br><hr class="line">
-                        </p>
-                        </form>
-
-                        <p>Grade for Class 6:
-                            <input type="number" id="class6" maxlength="3" min="40" max="100" required>
-                            <br>
-                        </p>
-
-                        <form id="group_6">
-                            <p>Is this class Pre-AP/AP?
-                                <label>
-                                <input type="radio" id="class_6.0" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
-                                <input type="radio" id="class_6.1" name="ques" value="No">
-                                No</label>
-                                <br><hr class="line">
-                            </p>
-                        </form>
-
-                        <p><b>Grade for Class 7:</b>
-                            <input type="number" id="class7" maxlength="3" min="40" max="100" required>
-                            <br>
-                        </p>
-
-                        <form id="group_7">
-                            <p>Is this class Pre-AP/AP?
-                                <label>
-                                <input type="radio" id="class_7.0" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
-                                <input type="radio" id="class_7.1" name="ques" value="No">
-                                No</label>
-                                <br><hr class="line">
-                            </p>
-                        </form>
-
-                        <p>Grade for Class 8:
-                            <input type="number" id="class8" maxlength="3" min="40" max="100" required>
-                            <br>
-                        </p>
-
-                        <form id="group_8">
-                            <p><b>Is this class Pre-AP/AP?</b>
-                                <label>
-                                <input type="radio" id="class_8.0" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
-                                <input type="radio" id="class_8.1" name="ques" value="No">
-                                No</label>
-                                <br><hr class="line">
-                            </p>
-                        </form>
-
-                        <input type="button" class="calc" id="button3" value="Calculate GPA" onClick="calculate2();">
-                        <br>
-                        <br>
-                    </b>
-                </div>
-                `
-            );
-        };
-
-        function display2() {
-            $.myjQuery2();
-        };
-
+        
         $.myjQuery1 = function() {
             $("#six").remove();
             $(".calculator").append(`
@@ -506,12 +370,10 @@
                         
                         <form id="group1">
                             <p>Is this class Pre-AP/AP?
-                                <label>
                                 <input type="radio" id="class_1.2" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
+                                <label for="class_1.2">Yes</label>
                                 <input type="radio" id="class_1.3" name="ques" value="No">
-                                No</label>
+                                <label for="class_1.3">No</label>
                                 <br><hr class="line">
                             </p>
                         </form>
@@ -528,12 +390,10 @@
                         
                         <form id="group2">
                             <p>Is this class Pre-AP/AP?
-                                <label>
                                 <input type="radio" id="class_2.2" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
+                                <label for="class_2.2">Yes</label>
                                 <input type="radio" id="class_2.3" name="ques" value="No">
-                                No</label>
+                                <label for="class_2.3">No</label>
                                 <br><hr class="line">
                             </p>
                         </form>
@@ -550,12 +410,10 @@
                         
                         <form id="group3">
                             <p>Is this class Pre-AP/AP?
-                                <label>
                                 <input type="radio" id="class_3.2" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
+                                <label for="class_3.2">Yes</label>
                                 <input type="radio" id="class_3.3" name="ques" value="No">
-                                No</label>
+                                <label for="class_3.3">No</label>
                                 <br><hr class="line">
                             </p>
                         </form>
@@ -572,12 +430,10 @@
                         
                         <form id="group4">
                             <p>Is this class Pre-AP/AP?
-                                <label>
                                 <input type="radio" id="class_4.2" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
+                                <label for="class_4.2">Yes</label>
                                 <input type="radio" id="class_4.3" name="ques" value="No">
-                                No</label>
+                                <label for="class_4.3">No</label>
                                 <br><hr class="line">
                             </p>
                         </form>
@@ -594,12 +450,10 @@
                         
                         <form id="group5">
                             <p>Is this class Pre-AP/AP?
-                                <label>
                                 <input type="radio" id="class_5.2" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
+                                <label for="class_5.2">Yes</label>
                                 <input type="radio" id="class_5.3" name="ques" value="No">
-                                No</label>
+                                <label for="class_5.3">No</label>
                                 <br><hr class="line">
                             </p>
                         </form>
@@ -616,12 +470,10 @@
                         
                         <form id="group6">
                             <p>Is this class Pre-AP/AP?
-                                <label>
                                 <input type="radio" id="class_6.2" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
+                                <label for="class_6.2">Yes</label>
                                 <input type="radio" id="class_6.3" name="ques" value="No">
-                                No</label>
+                                <label for="class_6.3">No</label>
                                 <br><hr class="line">
                             </p>
                         </form>
@@ -638,12 +490,10 @@
                         
                         <form id="group7">
                             <p>Is this class Pre-AP/AP?
-                                <label>
                                 <input type="radio" id="class_7.2" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
+                                <label for="class_7.2">Yes</label>
                                 <input type="radio" id="class_7.3" name="ques" value="No">
-                                No</label>
+                                <label for="class_7.3">No</label>
                                 <br><hr class="line">
                             </p>
                         </form>
@@ -660,12 +510,10 @@
                         
                         <form id="group8">
                             <p>Is this class Pre-AP/AP?
-                                <label>
                                 <input type="radio" id="class_8.2" name="ques" value="Yes">
-                                Yes</label>
-                                <label>
+                                <label for="class_8.2">Yes</label>
                                 <input type="radio" id="class_8.3" name="ques" value="No">
-                                No</label>
+                                <label for="class_8.3">No</label>
                                 <br><hr class="line">
                             </p>
                         </form>
@@ -683,6 +531,147 @@
             $.myjQuery1();
         };
 
+        $.myjQuery2 = function() {
+            $("#sem").remove();
+            $(".calculator").append(`
+                <div id="six">
+                    <b>
+                        <h3>If you are in a double-blocked class, enter it below as one class.
+                            <br><hr class="line">
+                        </h3>
+                        
+                        <p>Grade for Class 1:
+                            <input type="number" id="class1" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_1">
+                            <p>Is this class Pre-AP/AP?
+                                <input type="radio" id="class_1.0" name="ques" value="Yes" required>
+                                <label for="class_1.0">Yes</label>
+                                <input type="radio" id="class_1.1" name="ques" value="No" required>
+                                <label for="class_1.1">No</label> 
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p>Grade for Class 2:
+                            <input type="number" id="class2" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_2">
+                            <p>Is this class Pre-AP/AP?
+                                <input type="radio" id="class_2.0" name="ques" value="Yes">
+                                <label for="class_2.0">Yes</label>
+                                <input type="radio" id="class_2.1" name="ques" value="No">
+                                <label for="class_2.1">No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p>Grade for Class 3:
+                            <input type="number" id="class3" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_3">
+                            <p>Is this class Pre-AP/AP?
+                                <input type="radio" id="class_3.0" name="ques" value="Yes">
+                                <label for="class_3.0">Yes</label>
+                                <input type="radio" id="class_3.1" name="ques" value="No">
+                                <label for="class_3.1">No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p>Grade for Class 4:
+                            <input type="number" id="class4" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_4">
+                            <p>Is this class Pre-AP/AP?
+                                <input type="radio" id="class_4.0" name="ques" value="Yes">
+                                <label for="class_4.0">Yes</label>
+                                <input type="radio" id="class_4.1" name="ques" value="No">
+                                <label for="class_4.1">No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p>Grade for Class 5:
+                            <input type="number" id="class5" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_5">
+                        <p>Is this class Pre-AP/AP?
+                            <input type="radio" id="class_5.0" name="ques" value="Yes">
+                            <label for="class_5.0">Yes</label>
+                            <input type="radio" id="class_5.1" name="ques" value="No">
+                            <label for="class_5.1">No</label>
+                            <br><hr class="line">
+                        </p>
+                        </form>
+
+                        <p>Grade for Class 6:
+                            <input type="number" id="class6" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_6">
+                            <p>Is this class Pre-AP/AP?
+                                <input type="radio" id="class_6.0" name="ques" value="Yes">
+                                <label for="class_6.0">Yes</label>
+                                <input type="radio" id="class_6.1" name="ques" value="No">
+                                <label for="class_6.1">No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p><b>Grade for Class 7:</b>
+                            <input type="number" id="class7" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_7">
+                            <p>Is this class Pre-AP/AP?
+                                <input type="radio" id="class_7.0" name="ques" value="Yes">
+                                <label for="class_7.0">Yes</label>
+                                <input type="radio" id="class_7.1" name="ques" value="No">
+                                <label for="class_7.1">No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <p>Grade for Class 8:
+                            <input type="number" id="class8" maxlength="3" min="40" max="100" required>
+                            <br>
+                        </p>
+
+                        <form id="group_8">
+                            <p><b>Is this class Pre-AP/AP?</b>
+                                <input type="radio" id="class_8.0" name="ques" value="Yes">
+                                <label for="class_8.0">Yes</label>
+                                <input type="radio" id="class_8.1" name="ques" value="No">
+                                <label for="class_8.1">No</label>
+                                <br><hr class="line">
+                            </p>
+                        </form>
+
+                        <input type="button" class="calc" id="button3" value="Calculate GPA" onClick="calculate2();">
+                        <br>
+                        <br>
+                    </b>
+                </div>
+                `
+            );
+        };
+
+        function display2() {
+            $.myjQuery2();
+        };
     </script>
 </head>
 
