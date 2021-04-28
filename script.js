@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
         var final1 = $(`
             <div id="final1">
-                <h2>Your Semester GPA is: ` + gpa.toFixed(3) + `</h2>
+                <h2> Your Semester GPA is: ` + gpa.toFixed(3) + `</h2>
             </div>`
         ); 
     
