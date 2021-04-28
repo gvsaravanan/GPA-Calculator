@@ -4,7 +4,7 @@
     "description": "Calculate your GPA with input",
     "version": "1.0.0",
     "content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'",
-    "icons": {"128": "image-128.png"},
+    "icons": {"64": "calcWebImage.png"},
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
@@ -12,7 +12,7 @@
         }
     ],
     "browser_action": {
-        "default_icon": "image.png",
+        "default_icon": "calcExtensionIcon.png",
         "default_popup": "popup.html"
     },
     "permissions": ["activeTab"]

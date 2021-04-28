@@ -278,6 +278,10 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     
     function display2() {
+        if(document.getElementById('button1') && document.getElementById('button2')){
+            document.getElementById('button2').disabled=true; 
+            document.getElementById('button1').disabled=false;
+        }
         $.myjQuery2();
     };
     
