@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <br><hr class="line">
                     </h3>
             
-                    <p>Six Weeks Grades in Class 1:
+                    <p>Cycle Grades in Class 1:
                         <input type="number" id="class1_0" maxlength="3" min="40" max="100" required>
                         <input type="number" id="class1_1" maxlength="3" min="40" max="100" required>
                         <input type="number" id="class1_2" maxlength="3" min="40" max="100" required>
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </p>
                     </form>
     
-                    <p>Six Weeks Grades in Class 2:
+                    <p>Cycle Grades in Class 2:
                         <input type="number" id="class2_0" maxlength="3" min="40" max="100" required>
                         <input type="number" id="class2_1" maxlength="3" min="40" max="100" required>
                         <input type="number" id="class2_2" maxlength="3" min="40" max="100" required>
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </p>
                     </form>
     
-                    <p>Six Weeks Grades in Class 3:
+                    <p>Cycle Grades in Class 3:
                         <input type="number" id="class3_0" maxlength="3" min="40" max="100">
                         <input type="number" id="class3_1" maxlength="3" min="40" max="100">
                         <input type="number" id="class3_2" maxlength="3" min="40" max="100">
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </p>
                     </form>
     
-                    <p>Six Weeks Grades in Class 4:
+                    <p>Cycle Grades in Class 4:
                         <input type="number" id="class4_0" maxlength="3" min="40" max="100">
                         <input type="number" id="class4_1" maxlength="3" min="40" max="100">
                         <input type="number" id="class4_2" maxlength="3" min="40" max="100">
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </p>
                     </form>
     
-                    <p>Six Weeks Grades in Class 5:
+                    <p>Cycle Grades in Class 5:
                         <input type="number" id="class5_0" maxlength="3" min="40" max="100">
                         <input type="number" id="class5_1" maxlength="3" min="40" max="100">
                         <input type="number" id="class5_2" maxlength="3" min="40" max="100">
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </p>
                     </form>
     
-                    <p>Six Weeks Grades in Class 6:
+                    <p>Cycle Grades in Class 6:
                         <input type="number" id="class6_0" maxlength="3" min="40" max="100">
                         <input type="number" id="class6_1" maxlength="3" min="40" max="100">
                         <input type="number" id="class6_2" maxlength="3" min="40" max="100">
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </p>
                     </form>
     
-                    <p>Six Weeks Grades in Class 7:
+                    <p>Cycle Grades in Class 7:
                         <input type="number" id="class7_0" maxlength="3" min="40" max="100">
                         <input type="number" id="class7_1" maxlength="3" min="40" max="100">
                         <input type="number" id="class7_2" maxlength="3" min="40" max="100">
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </p>
                     </form>
     
-                    <p>Six Weeks Grades in Class 8:
+                    <p>Cycle Grades in Class 8:
                         <input type="number" id="class8_0" maxlength="3" min="40" max="100">
                         <input type="number" id="class8_1" maxlength="3" min="40" max="100">
                         <input type="number" id="class8_2" maxlength="3" min="40" max="100">
@@ -487,7 +487,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var final2 = $(`
             <div id="final2">
-                <h2>Your Six Weeks GPA is: ` + gpa.toFixed(3) + `</h2>
+                <h2>Your Cycle GPA is: ` + gpa.toFixed(3) + `</h2>
             </div>`
         );
     
