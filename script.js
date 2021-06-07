@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
                     
                     <form id="group1">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_1.2" name="ques" value="Yes">
                             <label for="class_1.2">Yes</label>
                             <input type="radio" id="class_1.3" name="ques" value="No">
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
                     
                     <form id="group2">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_2.2" name="ques" value="Yes">
                             <label for="class_2.2">Yes</label>
                             <input type="radio" id="class_2.3" name="ques" value="No">
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
                     
                     <form id="group3">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_3.2" name="ques" value="Yes">
                             <label for="class_3.2">Yes</label>
                             <input type="radio" id="class_3.3" name="ques" value="No">
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
                     
                     <form id="group4">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_4.2" name="ques" value="Yes">
                             <label for="class_4.2">Yes</label>
                             <input type="radio" id="class_4.3" name="ques" value="No">
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
                     
                     <form id="group5">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_5.2" name="ques" value="Yes">
                             <label for="class_5.2">Yes</label>
                             <input type="radio" id="class_5.3" name="ques" value="No">
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
                     
                     <form id="group6">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_6.2" name="ques" value="Yes">
                             <label for="class_6.2">Yes</label>
                             <input type="radio" id="class_6.3" name="ques" value="No">
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
                     
                     <form id="group7">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_7.2" name="ques" value="Yes">
                             <label for="class_7.2">Yes</label>
                             <input type="radio" id="class_7.3" name="ques" value="No">
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
                     
                     <form id="group8">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_8.2" name="ques" value="Yes">
                             <label for="class_8.2">Yes</label>
                             <input type="radio" id="class_8.3" name="ques" value="No">
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
         var input2 = $(`
             <div id="input2">
-                <h3>Please enter whether or not your classes are Pre-AP/AP.</h3>
+                <h3>Please enter whether or not your classes are weighted.</h3>
             </div>`
         );
     
@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
     
                     <form id="group_1">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_1.0" name="ques" value="Yes" required>
                             <label for="class_1.0">Yes</label>
                             <input type="radio" id="class_1.1" name="ques" value="No" required>
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
     
                     <form id="group_2">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_2.0" name="ques" value="Yes">
                             <label for="class_2.0">Yes</label>
                             <input type="radio" id="class_2.1" name="ques" value="No">
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
     
                     <form id="group_3">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_3.0" name="ques" value="Yes">
                             <label for="class_3.0">Yes</label>
                             <input type="radio" id="class_3.1" name="ques" value="No">
@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
     
                     <form id="group_4">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_4.0" name="ques" value="Yes">
                             <label for="class_4.0">Yes</label>
                             <input type="radio" id="class_4.1" name="ques" value="No">
@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
     
                     <form id="group_5">
-                    <p>Is this class Pre-AP/AP?
+                    <p>Is this class weighted?
                         <input type="radio" id="class_5.0" name="ques" value="Yes">
                         <label for="class_5.0">Yes</label>
                         <input type="radio" id="class_5.1" name="ques" value="No">
@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
     
                     <form id="group_6">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_6.0" name="ques" value="Yes">
                             <label for="class_6.0">Yes</label>
                             <input type="radio" id="class_6.1" name="ques" value="No">
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
     
                     <form id="group_7">
-                        <p>Is this class Pre-AP/AP?
+                        <p>Is this class weighted?
                             <input type="radio" id="class_7.0" name="ques" value="Yes">
                             <label for="class_7.0">Yes</label>
                             <input type="radio" id="class_7.1" name="ques" value="No">
@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
     
                     <form id="group_8">
-                        <p><b>Is this class Pre-AP/AP?</b>
+                        <p>Is this class weighted?
                             <input type="radio" id="class_8.0" name="ques" value="Yes">
                             <label for="class_8.0">Yes</label>
                             <input type="radio" id="class_8.1" name="ques" value="No">
@@ -445,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
         var input4 = $(`
             <div id="input4">
-                <h3>Please enter whether or not your classes are Pre-AP/AP.</h3>
+                <h3>Please enter whether or not your classes are weighted.</h3>
             </div>`
         );
     
