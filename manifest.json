@@ -1,16 +1,12 @@
 {
-    "manifest_version": 2,
     "name": "GPA Calculator",
     "description": "Calculate your GPA with input",
-    "version": "1.0.0",
+    "version": "1.1",
+    "manifest_version": 2,
     "content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'",
-    "icons": {"64": "calcWebImage.png"},
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": ["script.js", "/lib/jquery-3.5.1.min.js"]
-        }
-    ],
+    "icons": {"128": "calc.png", 
+              "48":"calcExtensionIcon", 
+              "64":"calcWebImage.png"},
     "browser_action": {
         "default_icon": "calcExtensionIcon.png",
         "default_popup": "popup.html"
