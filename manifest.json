@@ -5,7 +5,7 @@
     "manifest_version": 2,
     "content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'",
     "icons": {"128": "calc.png", 
-              "48":"calcExtensionIcon", 
+              "48":"calcExtensionIcon.png", 
               "64":"calcWebImage.png"},
     "browser_action": {
         "default_icon": "calcExtensionIcon.png",
