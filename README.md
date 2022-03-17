@@ -42,3 +42,6 @@ If the input fields are not entered correctly when the ***"Calculate GPA"*** but
 If all input fields are entered correctly and accurately, the student's Cycle GPA will be displayed below the ***"Calculate GPA"*** button.
 
 ![image](https://user-images.githubusercontent.com/65518366/121073515-3a2e4780-c798-11eb-9022-9e43aa3a94bd.png)
+
+---
+*Not officially listed on the Chrome Web Store*
