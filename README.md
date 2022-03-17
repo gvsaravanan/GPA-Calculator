@@ -45,3 +45,4 @@ If all input fields are entered correctly and accurately, the student's Cycle GP
 
 ---
 *Not officially listed on the Chrome Web Store*
+*Built using ReactJS, JavaScript, HTML, and CSS*
